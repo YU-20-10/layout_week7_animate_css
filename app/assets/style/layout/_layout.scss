@@ -1,0 +1,271 @@
+@import "../mixin+variable/variable";
+@import "../reset/reset";
+@import "../base/base";
+@import "../mixin+variable/mixin";
+
+// layout
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 12px;
+
+  @include pad {
+    max-width: 1016px;
+  }
+
+  @include phone {
+    max-width: 791px;
+  }
+}
+
+
+// header
+
+header {
+  background-color: $primary;
+
+  .container {
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .logo {
+
+    a {
+      display: block;
+      background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week3-4/logo-white.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 80px;
+      height: 72px;
+      white-space: nowrap;
+      text-indent: 101%;
+      overflow: hidden;
+    }
+
+    &:hover {
+      width: 89px;
+      height: 80px;
+
+      @include phone {
+        width: 82px;
+        height: 73.8px;
+      }
+    }
+  }
+
+  .material-symbols-outlined {
+    position: absolute;
+    display: none;
+    color: #FFFFFF;
+    font-size: 30px;
+
+    @include phone {
+      display: block;
+      right: 15px;
+      top: 20px;
+      &:hover{
+        font-size: 32px;
+      }
+    }
+  }
+
+  .menu {
+    margin-left: -32px;
+    margin-right: -32px;
+    @include font(20px);
+
+    @include phone {
+      display: none;
+    }
+
+    a {
+      padding: 25px 32px;
+      color: $light;
+
+      &:hover {
+        @include menu-hover;
+      }
+    }
+  }
+
+}
+
+// footer
+
+.footer {
+  background-color: $primary;
+  padding-top: 48px;
+  padding-bottom: 32px;
+
+  @include pad {
+    padding-bottom: 40px;
+  }
+
+  @include phone {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  a {
+    color: $light;
+  }
+
+  &-copyright {
+    justify-content: space-between;
+    color: $light;
+    @include font(16px);
+
+    @include phone {
+      flex-direction: column;
+
+      div {
+        margin-bottom: 8px;
+      }
+    }
+
+    .footer-privacy {
+      margin-right: -24px;
+      margin-left: -24px;
+      @include font(14px);
+
+      @include phone {
+        flex-direction: column;
+      }
+
+      a {
+        padding-right: 24px;
+        padding-left: 24px;
+
+        &:hover {
+          font-weight: bold;
+          color: black;
+        }
+
+        @include phone {
+          display: block;
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+
+.footer-main {
+  border-bottom: 1px solid $light;
+  margin-bottom: 32px;
+
+  @include phone {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .footer-link {
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    .footer-menu {
+      margin-right: -24px;
+      margin-left: -24px;
+      align-items: center;
+      @include font(16px);
+
+      @include phone {
+        display: none;
+      }
+
+      a {
+        padding: 12px 24px;
+
+        &:hover {
+          @include menu-hover;
+        }
+      }
+    }
+
+    .footer-social-media {
+      margin-right: -16px;
+      margin-left: -16px;
+
+      @include pad {
+        margin-right: -8px;
+        margin-left: -8px;
+      }
+
+      @include phone {
+        margin-right: -4px;
+        margin-left: -4px;
+      }
+
+      li {
+        padding-right: 16px;
+        padding-left: 16px;
+
+        @include pad {
+          padding-right: 8px;
+          padding-left: 8px;
+        }
+
+        @include phone {
+          padding-right: 4px;
+          padding-left: 4px;
+        }
+      }
+
+      img {
+        width: 48px;
+        height: 48px;
+
+        @include pad {
+          width: 40px;
+          height: 40px;
+        }
+
+        @include phone {
+          width: 24px;
+          height: 24px;
+        }
+
+        &:hover {
+          transform: scale(1.5);
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .footer-contact-info {
+    padding-bottom: 32px;
+
+    @include font(36px);
+
+    @include phone {
+      @include font(16px);
+      padding-bottom: 24px;
+    }
+
+    a {
+      margin-bottom: 8px;
+
+      &:hover {
+        font-weight: bold;
+        color: black;
+      }
+    }
+
+    .material-symbols-outlined {
+      font-size: 48px;
+      margin-right: 16px;
+      vertical-align: bottom;
+
+      @include phone {
+        font-size: 24px;
+      }
+    }
+
+  }
+}

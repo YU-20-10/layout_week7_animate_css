@@ -1,0 +1,23 @@
+body {
+  overflow-x: hidden;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.flex {
+  display: flex;
+}
